@@ -14,8 +14,8 @@ const Room = () => {
 
   useEffect(() => {
     const promise1 = database.listDocuments(
-      "6467b0d9a10010458ac0",
-      "6467b0e22f68d520411c",
+      process.env.NEXT_PUBLIC_APPWRITE_DATABASE_ID,
+      process.env.NEXT_PUBLIC_APPWRITE_COLLECTION_ID,
     );
 
     promise1.then(
@@ -44,8 +44,8 @@ const Room = () => {
     e.preventDefault();
 
     const promise = database.createDocument(
-      "6467b0d9a10010458ac0",
-      "6467b0e22f68d520411c",
+      process.env.NEXT_PUBLIC_APPWRITE_DATABASE_ID,
+      process.env.NEXT_PUBLIC_APPWRITE_COLLECTION_ID,
       ID.unique(),
       {
         message: message,
@@ -64,8 +64,8 @@ const Room = () => {
 
     const getCollections = () => {
       const promise1 = database.listDocuments(
-        "6467b0d9a10010458ac0",
-        "6467b0e22f68d520411c",
+        process.env.NEXT_PUBLIC_APPWRITE_DATABASE_ID,
+        process.env.NEXT_PUBLIC_APPWRITE_COLLECTION_ID,
       );
 
       promise1.then(
